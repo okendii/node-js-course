@@ -1,17 +1,10 @@
 //*Some of the node core modules: http, https, fs, path, os;
 
-//?--> HTTP MODULE
+//*MODULES WE WILL USE HERE
 const http = require("http");
+const routes = require("./routes");
 
-//!--> setHeader percakton cfar lloji te dhenash do derdojme ne client side
-//!--> The writable.write method writes some data to the stream, and calls the supplied callback once the data has been fully handled.
-//!--> end, no more data will be written to the Writable
-
-const server = http.createServer((req, res) => {
-  console.log(req.url, req.method, req.headers);
-  res.setHeader("Content-Type", "text/html");
-  res.write("<h1>Hello from my node js server</h1>");
-  res.end();
-});
+// we create a server and listen to it on port 3000
+const server = http.createServer(routes.handler);
 
 server.listen(3000);
