@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./1.Basics/index.js",
-    "start-server": "nodemon ./1.Basics/index.js"
+    "start": "nodemon ./ExpressJs/index.js",
+    "start-server": "nodemon ./ExpressJs/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "homepage": "https://github.com/okendii/node-js-course#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
   }
 }

@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\1.Basics\\index.js",
+      "program": "${workspaceFolder}\\ExpressJs\\index.js",
       "restart": true,
       "runtimeExecutable": "nodemon",
       "console": "integratedTerminal"
