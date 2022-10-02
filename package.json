@@ -1,0 +1,24 @@
+{
+  "name": "js-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./1.Basics/index.js",
+    "start-server": "nodemon ./1.Basics/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okendii/node-js-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okendii/node-js-course/issues"
+  },
+  "homepage": "https://github.com/okendii/node-js-course#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
