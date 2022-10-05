@@ -1,6 +1,9 @@
 const express = require("express");
-
 const app = express();
+const path = require("path");
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
+
 const bodyParser = require("body-parser");
 //!Middleware functions are functions that have access to the request object ( req ), the response object ( res ),
 //! and the next function in the application's request-response cycle. The next function is a function in the Express
@@ -14,23 +17,14 @@ const bodyParser = require("body-parser");
 //! adding a parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/", (req, res, next) => {
-  next();
+app.use("/admin", adminRoutes);
+
+app.use(shopRoutes);
+
+app.use(function (req, res, next) {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 
-app.use("/add-product", (req, res, next) => {
-  res.send(
-    "<form action='/product' method='POST'><input type='text' name='title'/><button type='submit'>Add Product</button></form>"
-  );
-});
-
-app.use("/product", (req, res, next) => {
-  console.log(req.body);
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  res.send("<h1>Hello from Express</h1>");
-});
+//! the dirname points to the folder where the current file is
 
 app.listen(3000);
